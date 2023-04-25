@@ -11,7 +11,7 @@ export const CodeEditor: React.FC<I.ICodeEditorProps> = ({ control }) => {
       name="code"
       render={({ field: { onChange, value } }) => (
         <MonacoEditor
-          width="700px"
+          width="720px"
           height="250px"
           language="javascript"
           value={value}

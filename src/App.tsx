@@ -43,14 +43,15 @@ function App() {
           pauseOnHover
           theme="dark"
         />
-        <h1 className={styles["injector-spider-title"]}>Injector Spider</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           <CodeEditor control={control} />
-          <button className={styles["injector-spider-button"]} type="submit">
-            Execute script in Browser
-          </button>
+          <div className={styles["inject-spider-actions"]}>
+            <button className={styles["injector-spider-button"]} type="submit">
+              Execute script in Browser
+            </button>
+          </div>
         </form>
-        <footer>
+        <footer className={styles["inject-spider-footer"]}>
           <p className={styles["injector-spider-text-footer"]}>
             Injector Spider v1.0.0 -{" "}
             <a
