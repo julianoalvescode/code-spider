@@ -1,0 +1,42 @@
+:root {
+  --primary: #50fa7b;
+  --secondary: #ff79c6;
+  --background: #282a36;
+  --text: hsla(0, 0%, 100%, 0.4);
+  --font-family: "Inter", sans-serif;
+  --button-color: rgba(255, 99, 99, 0.15);
+  --white: #fff;
+  --spacing: 0.8rem;
+  --spacing-sm: 0.4rem;
+  --spacing-md: 0.8rem;
+  --spacing-lg: 1.6rem;
+  --spacing-xl: 3.2rem;
+  --font-size-sm: 0.8rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.2rem;
+}
+
+:focus {
+  outline: transparent;
+  box-shadow: 0 0 0 2px var(--blue-900);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--gray-300);
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+input,
+textarea,
+button {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}

@@ -1,0 +1,27 @@
+.injector-spider-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  width: 800px;
+  background-color: var(--background);
+  padding: 2.7rem 0rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.injector-spider-button {
+  background-color: var(--button-color);
+  color: var(--secondary);
+  font-family: var(--font-family);
+  border: none;
+  padding: 0.8rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.injector-spider-text-footer {
+  color: var(--text);
+  font-size: 0.85rem;
+  cursor: pointer;
+}

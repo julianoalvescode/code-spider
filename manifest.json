@@ -1,0 +1,18 @@
+{
+  "name": "injector-spider",
+  "version": "1.0",
+  "description": "Injects a script into a page",
+  "manifest_version": 2,
+  "permissions": ["activeTab", "tabs", "<all_urls>", ""],
+  "browser_action": {
+    "default_title": "Injector Spider",
+    "default_popup": "index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["assets/index-5cfff843.js"]
+    }
+  ],
+  "content_security_policy": "script-src 'self' blob: filesystem: https://cdn.jsdelivr.net; object-src 'self'"
+}
