@@ -17,7 +17,7 @@ export const CodeEditor: React.FC<I.ICodeEditorProps> = ({ control }) => {
           value={value}
           onChange={onChange}
           theme="vs-dark"
-          defaultValue="//Code goes here"
+          defaultValue="// Code something here..."
         />
       )}
     />

@@ -10,18 +10,30 @@
 }
 
 .injector-spider-button {
-  background-color: var(--button-color);
-  color: var(--secondary);
+  background-color: var(--secondary);
+  color: var(--white);
   font-family: var(--font-family);
   border: none;
   padding: 0.8rem;
   border-radius: 0.3rem;
   cursor: pointer;
   margin-top: 1rem;
+  transition: all 0.2s ease-in-out;
 }
 
 .injector-spider-text-footer {
   color: var(--text);
   font-size: 0.85rem;
   cursor: pointer;
+}
+
+.injector-spider-link {
+  color: var(--link);
+  text-decoration: underline;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.injector-spider-title {
+  color: var(--white);
 }
