@@ -7,6 +7,8 @@ import styles from "./design-system/styles/app.module.scss";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+import { saveAs } from "file-saver";
+
 export interface IFormData {
   code: string;
 }
@@ -14,14 +16,19 @@ export interface IFormData {
 function App() {
   const { control, handleSubmit } = useForm<IFormData>();
 
-  const onSubmit = (data: IFormData) => {
+  const onSubmit = (_data: IFormData) => {
     try {
-      chrome.tabs.query(
-        { active: true, currentWindow: true },
-        function (_tabs: any) {
-          chrome.tabs.executeScript({ code: data.code });
-        }
-      );
+      chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        chrome.scripting.executeScript(
+          {
+            target: { tabId: tabs[0].id as number },
+            files: ["arquivo.js"],
+          },
+          () => {
+            console.log("Script executado com sucesso!");
+          }
+        );
+      });
       toast.success("Script executed in Browser!");
     } catch (_error) {
       toast.error("Error executing script in Browser!");
@@ -43,7 +50,10 @@ function App() {
           pauseOnHover
           theme="dark"
         />
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form
+          className={styles["injector-spider-form"]}
+          onSubmit={handleSubmit(onSubmit)}
+        >
           <CodeEditor control={control} />
           <div className={styles["inject-spider-actions"]}>
             <button className={styles["injector-spider-button"]} type="submit">

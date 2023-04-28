@@ -41,3 +41,26 @@ button {
   font-weight: 400;
   font-size: 1rem;
 }
+
+.ace_editor {
+  font-family: "Fira Code", monospace !important;
+}
+
+.ace_scrollbar {
+  background: #2f2f2f;
+  width: 8px;
+  z-index: 1;
+}
+
+.ace_scrollbar::-webkit-scrollbar-thumb {
+  background: #505050;
+  border-radius: 8px;
+}
+
+.ace_scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #808080;
+}
+
+.ace_scrollbar::-webkit-scrollbar-thumb:active {
+  background: #a0a0a0;
+}

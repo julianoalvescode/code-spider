@@ -3,9 +3,10 @@
   "name": "Injector Spider",
   "description": "Injects a script into a page",
   "version": "1.0",
-  "permissions": ["activeTab", "scripting"],
+  "permissions": ["activeTab", "tabs", "scripting"],
   "action": {
     "default_title": "Injector Spider",
     "default_popup": "index.html"
-  }
+  },
+  "host_permissions": ["<all_urls>"]
 }
