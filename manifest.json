@@ -1,18 +1,11 @@
 {
-  "name": "Injector Spider",
-  "version": "1.0",
-  "description": "Plugin for inserting scripts in the browser with a VS Code-like interface. Ideal for automation and customization.",
   "manifest_version": 3,
-  "permissions": ["activeTab", "<all_urls>"],
-  "browser_action": {
+  "name": "Injector Spider",
+  "description": "Injects a script into a page",
+  "version": "1.0",
+  "permissions": ["activeTab", "scripting"],
+  "action": {
     "default_title": "Injector Spider",
     "default_popup": "index.html"
-  },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["assets/index-5cfff843.js"]
-    }
-  ],
-  "content_security_policy": "script-src 'self' blob: filesystem: https://cdn.jsdelivr.net; object-src 'self'"
+  }
 }
