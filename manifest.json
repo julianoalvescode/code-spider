@@ -1,9 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "Injector Spider",
-  "description": "Injects a script into a page",
+  "name": "Code Spider",
+  "description": "Simple code in your browser",
   "version": "1.0",
-  "permissions": ["activeTab", "tabs", "scripting"],
+  "permissions": ["activeTab", "scripting"],
   "action": {
     "default_title": "Injector Spider",
     "default_popup": "index.html"

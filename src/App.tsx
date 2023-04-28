@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 
-import { CodeEditor } from "./design-system/components";
+import { CodeEditor, Button, Text, Link } from "./design-system/components";
 
 import styles from "./design-system/styles/app.module.scss";
 
@@ -14,64 +14,68 @@ export interface IFormData {
 }
 
 function App() {
-  const { control, handleSubmit } = useForm<IFormData>();
+  const { control, handleSubmit, reset } = useForm<IFormData>({
+    defaultValues: {
+      code: `// Code Spider v1.0.0`,
+    },
+  });
 
   const onSubmit = (_data: IFormData) => {
     try {
-      chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-        chrome.scripting.executeScript(
-          {
-            target: { tabId: tabs[0].id as number },
-            files: ["arquivo.js"],
-          },
-          () => {
-            console.log("Script executado com sucesso!");
-          }
-        );
+      const blob = new Blob([_data.code], {
+        type: "text/javascript;charset=utf-8",
       });
-      toast.success("Script executed in Browser!");
+
+      saveAs(blob, "injector-spider.js");
+
+      toast.success("Success!!");
     } catch (_error) {
-      toast.error("Error executing script in Browser!");
+      toast.error("Error :(");
     }
   };
 
   return (
     <>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
       <main className={styles["injector-spider-main"]}>
-        <ToastContainer
-          position="top-right"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="dark"
-        />
+        <header className={styles["injector-spider-header"]}>
+          <div className={styles["injector-spider-frame"]}>
+            <div className={styles["injector-circle-1"]}></div>
+            <div className={styles["injector-circle-2"]}></div>
+            <div className={styles["injector-circle-3"]}></div>
+          </div>
+          <h3 className={styles["injector-spider-header-title"]}>Javascript</h3>
+        </header>
         <form
           className={styles["injector-spider-form"]}
           onSubmit={handleSubmit(onSubmit)}
         >
           <CodeEditor control={control} />
           <div className={styles["inject-spider-actions"]}>
-            <button className={styles["injector-spider-button"]} type="submit">
-              Execute script in Browser
-            </button>
+            <Button type="submit">Save</Button>
+            <Button onClick={() => reset("code")} type="button">
+              Reset
+            </Button>
           </div>
         </form>
         <footer className={styles["inject-spider-footer"]}>
-          <p className={styles["injector-spider-text-footer"]}>
-            Injector Spider v1.0.0 -{" "}
-            <a
-              target="_blank"
-              className={styles["injector-spider-link"]}
-              href="https://github.com/julianoalvescode"
-            >
+          <Text>
+            Code Spider v1.0.0 -{" "}
+            <Link target="_blank" href="https://github.com/julianoalvescode">
               Made by Barba
-            </a>
-          </p>
+            </Link>
+          </Text>
         </footer>
       </main>
     </>

@@ -9,40 +9,59 @@
   align-items: center;
 }
 
-.injector-spider-button {
-  background-color: var(--secondary);
-  color: var(--white);
-  font-family: var(--font-family);
-  border: none;
-  padding: 0.8rem;
-  border-radius: 0.3rem;
-  cursor: pointer;
-  margin-top: 1rem;
-  transition: all 0.2s ease-in-out;
-}
-
-.injector-spider-text-footer {
-  color: var(--text);
-  font-size: 0.85rem;
-  cursor: pointer;
-}
-
-.injector-spider-link {
-  color: var(--link);
-  text-decoration: underline;
-  font-size: 0.85rem;
-  cursor: pointer;
-}
-
-.injector-spider-title {
-  color: var(--white);
-}
-
 .inject-spider-actions {
   display: flex;
-  padding: 0px 40px;
+  padding: 0px 30px;
+  gap: var(--spacing-md);
 }
 
 .injector-spider-form {
   width: 100%;
+}
+
+.injector-spider-frame {
+  display: flex;
+  gap: 7px;
+  cursor: pointer;
+}
+
+.injector-spider-header {
+  display: flex;
+  justify-content: left;
+  gap: var(--spacing-md);
+  width: 100%;
+  align-items: center;
+  margin-left: 50px;
+}
+
+.injector-circle-1 {
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  background: var(--frame-control-color-1);
+}
+
+.injector-circle-2 {
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  background-color: var(--frame-control-color-2);
+}
+
+.injector-circle-3 {
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  background-color: var(--frame-control-color-3);
+}
+
+.injector-spider-header-title {
+  font-size: 12px;
+  font-weight: 500;
+  inset: 0;
+  letter-spacing: 0.32px;
+  line-height: 12px;
+  text-align: center;
+  color: var(--frame-title-color);
+  width: 500px;
 }
