@@ -63,8 +63,8 @@ function App() {
         >
           <CodeEditor control={control} />
           <div className={styles["inject-spider-actions"]}>
-            <Button type="submit">Save</Button>
-            <Button onClick={() => reset("code")} type="button">
+            <Button type="submit">Save file</Button>
+            <Button onClick={() => reset()} type="button">
               Reset
             </Button>
           </div>
